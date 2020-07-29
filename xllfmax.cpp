@@ -11,7 +11,7 @@
 
 using namespace xll;
 
-static AddInX xai_fmax(
+AddInX xai_fmax(
 	FunctionX(XLL_DOUBLEX, X_("?xll_fmax"), X_("XLL.FMAX"))
 	.Arg(XLL_DOUBLEX, X_("x"), X_("is a floating point number"))
 	.Arg(XLL_DOUBLEX, X_("y"), X_("is a floating point number"))

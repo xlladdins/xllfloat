@@ -12,12 +12,14 @@
 
 using namespace xll;
 
-static AddInX xai_tanh(
+AddInX xai_tanh(
 	FunctionX(XLL_DOUBLEX, X_("?xll_tanh"), X_("XLL.TANH"))
-	.Arg(XLL_DOUBLEX, X_("x"), X_("is a floating point number "))
+	Args({
+		ArgX(XLL_DOUBLEX, X_("x"), X_("is a floating point number "))
+	})
 	.Category(CATEGORY)
 	.FunctionHelp(X_("Returns tanh(x)"))
-	.Documentation(LR"(Computes the hyperbolic tangent of x)")
+	.Documentation(X_(R"(Computes the hyperbolic tangent of x)"))
 );
 
 double WINAPI

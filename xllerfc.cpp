@@ -10,7 +10,7 @@
 
 using namespace xll;
 
-static AddInX xai_erfc(
+AddInX xai_erfc(
 	FunctionX(XLL_DOUBLEX, X_("?xll_erfc"), X_("XLL.ERFC"))
 	.Arg(XLL_DOUBLEX, X_("x"), X_("is the number."), X_("0"))
 	.Category(CATEGORY)

@@ -8,7 +8,7 @@
 
 using namespace xll;
 
-static AddInX xai_ldexp(
+AddInX xai_ldexp(
 	FunctionX(XLL_DOUBLEX, X_("?xll_ldexp"), X_("LDEXP"))
 	.Args({
 		ArgX(XLL_DOUBLEX, X_("sig"), X_("is the significand")),
@@ -16,7 +16,7 @@ static AddInX xai_ldexp(
 	})
 	.Category(CATEGORY)
 	.FunctionHelp(X_("Returns sig*2^exp using the C library function ldexp()"))
-	.Documentation(LR"("This function is the inverse of <codeInline>FREXP</codeInline>.)")
+	.Documentation(X_(R"("This function is the inverse of <codeInline>FREXP</codeInline>.)"))
 );
 double WINAPI
 xll_ldexp(double sig, LONG exp)

@@ -12,7 +12,7 @@
 
 using namespace xll;
 
-static AddInX xai_logb(
+AddInX xai_logb(
 	FunctionX(XLL_DOUBLEX, X_("?xll_logb"), X_("XLL.LOGB"))
 	.Arg(XLL_DOUBLEX, X_("x"), X_("is a double number "))
 	.Category(CATEGORY)

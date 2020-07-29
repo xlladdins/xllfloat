@@ -9,7 +9,7 @@
 
 using namespace xll;
 
-static AddInX xai_ulp(
+AddInX xai_ulp(
 	FunctionX(XLL_DOUBLEX, X_("?xll_ulp"), X_("ULP"))
 	.Args({
 		ArgX(XLL_DOUBLEX, X_("x"), X_("is a floating point number.")),

@@ -10,7 +10,7 @@
 
 using namespace xll;
 
-static AddInX xai_erf(
+AddInX xai_erf(
 	FunctionX(XLL_DOUBLEX, X_("?xll_erf"), X_("XLL.ERF"))
 	.Arg(XLL_DOUBLEX, X_("X"), X_("is the valur of input in the erf."), X_("1"))
 	.Category(CATEGORY)

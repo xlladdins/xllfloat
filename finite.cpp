@@ -8,7 +8,7 @@
 
 using namespace xll;
 
-static AddInX xai_finite(
+AddInX xai_finite(
 	FunctionX(XLL_BOOLX, X_("?xll_finite"), X_("FINITE"))
 	.Args({
 		ArgX(XLL_DOUBLEX, X_("x"), X_("is a floating point number "))

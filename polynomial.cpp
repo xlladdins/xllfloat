@@ -11,9 +11,9 @@ AddInX xai_polynomial(
     })
     .FunctionHelp(X_("Returns c[0] + c[1]*x + c[2]*x^2 + ... where c is the array of coefficients"))
     .Category(X_("XLL"))
-    .Documentation(LR"(
+    .Documentation(X_(R"(
         Evaluates the polynomial using the Horner method.
-    )")
+    )"))
 );
 double WINAPI xll_polynomial(const _FPX* pc, double x)
 {

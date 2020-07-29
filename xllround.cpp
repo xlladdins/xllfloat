@@ -10,12 +10,12 @@
 
 using namespace xll;
 
-static AddInX xai_round(
+AddInX xai_round(
 	FunctionX(XLL_DOUBLEX, X_("?xll_round"), X_("XLL.ROUND"))
 	.Arg(XLL_DOUBLEX, X_("x"), X_("value to be rounded"))
 	.Category(CATEGORY)
 	.FunctionHelp(X_("Returns the integral value that is nearest to x, with halfway cases rounded away from zero."))
-	.Documentation(LR"(The round() function in C++ returns the integral value that is nearest to the argument, with halfway cases rounded away from zero.)")
+	.Documentation(X_(R"(The round() function in C++ returns the integral value that is nearest to the argument, with halfway cases rounded away from zero.)")
 );
 
 double WINAPI

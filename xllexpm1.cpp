@@ -10,12 +10,12 @@
 
 using namespace xll;
 
-static AddInX xai_expm1(
+AddInX xai_expm1(
 	FunctionX(XLL_DOUBLEX, X_("?xll_expm1"), X_("XLL.EXPM1"))
 	.Arg(XLL_DOUBLEX, X_("x"), X_("is the floating."))
 	.Category(CATEGORY)
 	.FunctionHelp(X_("Computes e raised to the given power, minus one."))
-	.Documentation(LR"("Computes e raised to the given power, minus one."
+	.Documentation(X_(R"("Computes e raised to the given power, minus one."
 	)")
 );
 double WINAPI

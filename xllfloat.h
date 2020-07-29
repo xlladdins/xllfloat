@@ -2,7 +2,7 @@
 // Copyright (c) 2011-2020 KALX, LLC. All rights reserved. No warranty is made.
 #pragma once
 #include <cfloat>
-#include <cmath>
+#define XLOPERX XLOPER
 #include "xll/xll/xll.h"
 
 #ifndef CATEGORY

@@ -42,7 +42,7 @@ int xll_test_popcount = []() { return test_popcount<uint32_t>(); }();
 
 using namespace xll;
 
-static AddInX xai_popcount(
+AddInX xai_popcount(
 	FunctionX(XLL_LONGX, X_("?xll_popcount"), X_("POPCOUNT.NUM"))
     .Args({
 	    ArgX(XLL_DOUBLEX, X_("Num"), X_("is a floating point number "))

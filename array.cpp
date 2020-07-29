@@ -8,7 +8,7 @@
 
 using namespace xll;
 
-static AddInX xai_array_set(
+AddInX xai_array_set(
     FunctionX(XLL_HANDLEX, X_("?xll_array_set"), X_("ARRAY.SET"))
     .Args({
         ArgX(XLL_FPX, X_("Array"), X_("is an array of numbers. ")) 
@@ -26,7 +26,7 @@ HANDLEX WINAPI xll_array_set(const _FPX* pa)
     return ha.get();
 }
 
-static AddInX xai_array_get(
+AddInX xai_array_get(
     FunctionX(XLL_FPX, X_("?xll_array_get"), X_("ARRAY.GET"))
     .Args({
         ArgX(XLL_HANDLEX, X_("Handle"), X_("is handle to an array returned by ARRAY.SET."))
@@ -48,7 +48,7 @@ _FPX* WINAPI xll_array_get(HANDLEX h)
     return 0;
 }
 
-static AddInX xai_array_apply(
+AddInX xai_array_apply(
     FunctionX(XLL_LPOPERX, X_("?xll_array_apply"), X_("ARRAY.APPLY"))
     .Args({
         ArgX(XLL_LPOPERX, X_("f"), X_("is a handle to a user defined function.")),
@@ -189,11 +189,11 @@ AddInX xai_array_sort(
     })
     .Category(CATEGORY)
     .FunctionHelp(X_("Sort an array of numbers."))
-    .Documentation(LR"(
+    .Documentation(X_(R"(
 Sort an array in numeric order. If n is zero then all elements are sorted from high to low. 
 If n is -1 all elements are sorted from low to high. Other values of n perform a partial sort
 in decending order if n is positive and increasing order if n is negative.
-)")
+)"))
 );
 _FPX* WINAPI xll_array_sort(_FPX* pa, LONG n)
 {
@@ -223,12 +223,12 @@ AddInX xai_array_grade(
     })
     .Category(CATEGORY)
     .FunctionHelp(X_("Grade an array of numbers."))
-    .Documentation(LR"(
+    .Documentation(X_(R"(
 Grade an array in numeric order. If n is zero then all elements are graded from high to low. 
 If n is -1 all elements are graded from low to high. Other values of n perform a partial grade
 in decending order if n is positive and increasing order if n is negative.
 The result of INDEX(a, 1 + ARRAY.GRADE(a,n)) is identical to ARRAY.SORT(a,n). 
-)")
+)"))
 );
 #pragma warning(push)
 #pragma warning(disable: 4244)
@@ -265,7 +265,7 @@ _FPX* WINAPI xll_array_grade(const _FPX* pa, LONG n)
 
 static std::default_random_engine e;
 
-static AddInX xai_array_random(
+AddInX xai_array_random(
     FunctionX(XLL_FPX, X_("?xll_array_random"), X_("ARRAY.RANDOM"))
     .Args({
         ArgX(XLL_WORDX, X_("Rows"), X_("is the number of rows.")),

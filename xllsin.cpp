@@ -10,7 +10,7 @@
 
 using namespace xll;
 
-static AddInX xai_sin(
+AddInX xai_sin(
 	FunctionX(XLL_DOUBLEX, X_("?xll_sin"), X_("XLL.SIN"))
 	.Arg(XLL_DOUBLEX, X_("x"), X_("is a floating number."))
 	.FunctionHelp(X_("Returns sin(x)"))

@@ -15,14 +15,14 @@
 
 using namespace xll;
 
-static AddInX xai_arcosh(
+AddInX xai_arcosh(
 	FunctionX(XLL_DOUBLEX, X_("?xll_arcosh"), X_("ACOSH"))
 	.Arg(XLL_DOUBLEX, X_("x"), X_("is a floating point number."))
 	.Category(CATEGORY)
 	.FunctionHelp(X_("computes the inverse hyperbolic cosine (arcosh(x)) by calling acosh()"))
-	.Documentation(LR"(
+	.Documentation(X_(R"(
         The _arcosh functions return a value that's the inverse hyperbolic cosine (arcosh(x))
-    )")
+    )"))
 );
 double WINAPI
 xll_arcosh(double x)

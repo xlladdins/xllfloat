@@ -9,7 +9,7 @@
 #endif
 
 using namespace xll;
-static AddInX xai_modf(
+AddInX xai_modf(
 	FunctionX(XLL_FPX, X_("?xll_modf"), X_("XLL.MODF"))
 	.Arg(XLL_DOUBLEX, X_("x"), X_("is a floating point number."))
 	.Category(CATEGORY)

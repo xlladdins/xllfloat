@@ -10,7 +10,7 @@
 
 using namespace xll;
 
-static AddInX xai_fabs(
+AddInX xai_fabs(
 	FunctionX(XLL_DOUBLEX, X_("?xll_fabs"), X_("XLL.FABS"))
 	.Arg(XLL_DOUBLEX, X_("num"), X_("is a floating point number."))
 	.Category(CATEGORY)

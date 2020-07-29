@@ -10,7 +10,7 @@
 
 using namespace xll;
 
-static AddInX xai_nearbyint(
+AddInX xai_nearbyint(
 	FunctionX(XLL_DOUBLEX, X_("?xll_nearbyint"), X_("XLL.NEARBYINT"))
 	.Args({
 		ArgX(XLL_DOUBLEX, X_("X"), X_("is the input number."))

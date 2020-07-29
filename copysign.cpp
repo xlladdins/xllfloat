@@ -8,7 +8,7 @@
 
 using namespace xll;
 
-static AddInX xai_copysign(
+AddInX xai_copysign(
 	FunctionX(XLL_DOUBLEX, X_("?xll_copysign"), X_("COPYSIGN"))
 	.Args({
 		ArgX(XLL_DOUBLEX, X_("x"), X_("is a floating point number")),

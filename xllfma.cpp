@@ -10,7 +10,7 @@
 
 using namespace xll;
 
-static AddInX xai_fma(
+AddInX xai_fma(
 	FunctionX(XLL_DOUBLEX, X_("?xll_fma"), X_("XLL.FMA"))
 	.Args({
 		ArgX(XLL_DOUBLEX, X_("a"), X_("is the first input.")/*!!!, X_("10")*/),
@@ -19,10 +19,10 @@ static AddInX xai_fma(
 	})
 	.Category(CATEGORY)
 	.FunctionHelp(X_("Computes the sum of the product of the first and second inputs and the third input.\n\n a*b+c"))
-	.Documentation(LR"(
+	.Documentation(X_(R"(
 Computes the sum of the product of the first and second inputs and the third inputs (Fused Multiply-Add)
 Given three inputs a, b, and c, the function computes a * b + c without loss of precision in any intermediate step.
-)")
+)"))
 );
 
 double WINAPI

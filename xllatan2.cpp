@@ -10,7 +10,7 @@
 
 using namespace xll;
 
-static AddInX xai_atan2(
+AddInX xai_atan2(
 	FunctionX(XLL_DOUBLEX, X_("?xll_atan2"), X_("XLL.ATAN2"))
 	.Arg(XLL_DOUBLEX, X_("y"), X_("is the numerator."), X_("0.5"))
 	.Arg(XLL_DOUBLEX, X_("x"), X_("is the denominator."), X_("5"))

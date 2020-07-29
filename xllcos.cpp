@@ -10,7 +10,7 @@
 
 using namespace xll;
 
-static AddInX xai_cos(
+AddInX xai_cos(
 	FunctionX(XLL_DOUBLEX, X_("?xll_cos"), X_("XLL.COS"))
 	.Arg(XLL_DOUBLEX, X_("x"), X_("is a floating point number "))
 	.Category(CATEGORY)

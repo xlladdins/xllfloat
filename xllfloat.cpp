@@ -7,7 +7,7 @@
 #endif
 using namespace xll;
 /*
-static AddInX xai_float(
+AddInX xai_float(
 	Documentation(
 		X_("Wrappers for &lt;cmath&gt;.")
 	)

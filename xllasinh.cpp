@@ -11,14 +11,14 @@
 
 using namespace xll;
 
-static AddInX xai_asinh(
+AddInX xai_asinh(
 	FunctionX(XLL_DOUBLEX, X_("?xll_asinh"), X_("XLL.ASINH"))
 	.Arg(XLL_DOUBLEX, X_("x"), X_("is a floating point number."))
 	.Category(CATEGORY)
 	.FunctionHelp(X_("Returns the area hyperbolic sine of x."))
-	.Documentation(LR"(
+	.Documentation(X_(R"(
 Computes the area hyperbolic sine for the given floating point input.
-    )")
+    )"))
 );
 double WINAPI
 xll_asinh(double x)

@@ -10,7 +10,7 @@
 
 using namespace xll;
 
-static AddInX xai_sinh(
+AddInX xai_sinh(
 	FunctionX(XLL_DOUBLEX, X_("?xll_sinh"), X_("XLL.SINH"))
 	.Arg(XLL_DOUBLEX, X_("value"), X_("is the input value."), X_("0"))
 	.Category(CATEGORY)

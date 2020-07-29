@@ -7,7 +7,7 @@
 
 using namespace xll;
 /*
-static AddInX xai_float_constants(
+AddInX xai_float_constants(
 	Args(CATEGORY)
 	.Documentation(
 		X_("Various constants from &lt;climits&gt;." )

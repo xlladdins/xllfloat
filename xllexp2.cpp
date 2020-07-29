@@ -11,7 +11,7 @@
 
 using namespace xll;
 
-static AddInX xai_exp2(
+AddInX xai_exp2(
 	FunctionX(XLL_DOUBLEX, X_("?xll_exp2"), X_("XLL.EXP2"))
 	.Arg(XLL_DOUBLEX, X_("x"), X_("is a floating point number."))
 	.Category(CATEGORY)

@@ -11,7 +11,7 @@
 
 using namespace xll;
 
-static AddInX xai_fmin(
+AddInX xai_fmin(
 	FunctionX(XLL_DOUBLEX, X_("?xll_fmin"), X_("XLL.FMIN"))
 	.Arg(XLL_DOUBLEX, X_("x"), X_("is the first input floating point value."), X_("1.1"))
 	.Arg(XLL_DOUBLEX, X_("y"), X_("is the second input floating point value."), X_("3.22"))

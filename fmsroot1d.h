@@ -3,7 +3,7 @@
 #include <cassert>
 #include <functional>
 #include <utility>
-#include "xll12/xll/ensure.h"
+#include "xll/xll/ensure.h"
 
 namespace fms::root1d {
 

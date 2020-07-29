@@ -12,7 +12,7 @@
 
 using namespace xll;
 
-static AddInX xai_pow(
+AddInX xai_pow(
 	FunctionX(XLL_DOUBLEX, X_("?xll_pow"), X_("XLL.POW"))
 	.Arg(XLL_DOUBLEX, X_("x"), X_("the number to be raised"))
 	.Arg(XLL_DOUBLEX, X_("y"), X_("The power that it raise to "))

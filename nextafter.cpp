@@ -8,7 +8,7 @@
 
 using namespace xll;
 
-static AddInX xai_nextafter(
+AddInX xai_nextafter(
 	FunctionX(XLL_DOUBLEX, X_("?xll_nextafter"), X_("NEXTAFTER"))
 	.Args({
 		ArgX(XLL_DOUBLEX, X_("x"), X_("is a floating point number")),

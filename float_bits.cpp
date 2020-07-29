@@ -8,7 +8,7 @@
 
 using namespace xll;
 
-static AddInX xai_float_bits(
+AddInX xai_float_bits(
 	FunctionX(XLL_FPX, X_("?xll_float_bits"), X_("FLOAT.BITS"))
 	.Args({ 
 		ArgX(XLL_DOUBLEX, X_("Num"), X_("is a floating point number ")) 
@@ -37,17 +37,17 @@ xll_float_bits(double x)
 	return b.get();
 }
 
-static AddInX xai_bits_float(
+AddInX xai_bits_float(
 	FunctionX(XLL_DOUBLEX, X_("?xll_bits_float"), X_("BITS.FLOAT"))
 	.Args({ 
 		ArgX(XLL_FPX, X_("Bits"), X_("is an array of 64 bits "))
 	})
 	.Category(CATEGORY)
 	.FunctionHelp(X_("Converts array of 64 bits to a floating point Number"))
-	.Documentation(LR"(
+	.Documentation(X_(R"(
         Return the bit composing a floating point number.
         The inverse function is FLOAT.BITS.
-    )")
+    )"))
 );
 double WINAPI
 xll_bits_float(const _FP12* pb)

@@ -10,12 +10,12 @@
 
 using namespace xll; // uses the xll namespace to eliminate neccessity of writing xll::function
 
-static AddInX xai_cosh( // create a static function which 
+AddInX xai_cosh( // create a static function which 
 	FunctionX(XLL_DOUBLEX, X_("?xll_cosh"), X_("XLL.COSH"))
 	.Arg(XLL_DOUBLEX, X_("x"), X_("is x within cosh(x)."), X_("0"))
 	.Category(CATEGORY)
 	.FunctionHelp(X_("Computes the hyperbolic cosine."))
-	.Documentation(LR"(Computes the hyperbolic	cosine.)")
+	.Documentation(X_(R"(Computes the hyperbolic	cosine.)")
 );
 
 double WINAPI

@@ -10,7 +10,7 @@
 
 using namespace xll;
 
-static AddInX xai_remquo(
+AddInX xai_remquo(
 	FunctionX(XLL_FPX, X_("?xll_remquo"), X_("XLL.REMQUO"))
 	.Arg(XLL_DOUBLEX, X_("numer"), X_("is the numerator."), X_("-10"))
 	.Arg(XLL_DOUBLEX, X_("denom"), X_("is the denominator."), X_("3"))
