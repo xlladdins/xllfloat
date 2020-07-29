@@ -1,41 +1,45 @@
+// !!! move this out of xllfloat
 #include <algorithm>
-#include "xll12/xll/xll.h"
+#include "xll/xll/xll.h"
 
-#define _T(s) L##s
 #ifndef CATEGORY
-#define CATEGORY L"ARRAY"
+#define CATEGORY X_("ARRAY")
 #endif
 
 using namespace xll;
 
 static AddInX xai_array_set(
-    FunctionX(XLL_HANDLE, _T("?xll_array_set"), _T("ARRAY.SET"))
-    .Arg(XLL_FP, _T("Array"), _T("is an array of numbers. "))
+    FunctionX(XLL_HANDLEX, X_("?xll_array_set"), X_("ARRAY.SET"))
+    .Args({
+        ArgX(XLL_FPX, X_("Array"), X_("is an array of numbers. ")) 
+    })
     .Uncalced()
     .Category(CATEGORY)
-    .FunctionHelp(_T("Return a handle to an array."))
-    .Documentation(_T("The array is stored in memory and can be retrieved using ARRAY.GET."))
+    .FunctionHelp(X_("Return a handle to an array."))
+    .Documentation(X_("The array is stored in memory and can be retrieved using ARRAY.GET."))
 );
-HANDLEX WINAPI xll_array_set(const _FP12* pa)
+HANDLEX WINAPI xll_array_set(const _FPX* pa)
 {
 #pragma XLLEXPORT
-    handle<xll::FP12> ha(new xll::FP12(*pa));
+    handle<xll::FPX> ha(new xll::FPX(*pa));
 
     return ha.get();
 }
 
 static AddInX xai_array_get(
-    FunctionX(XLL_FP, _T("?xll_array_get"), _T("ARRAY.GET"))
-    .Arg(XLL_HANDLE, _T("Handle"), _T("is handle to an array returned by ARRAY.SET. "))
+    FunctionX(XLL_FPX, X_("?xll_array_get"), X_("ARRAY.GET"))
+    .Args({
+        ArgX(XLL_HANDLEX, X_("Handle"), X_("is handle to an array returned by ARRAY.SET."))
+    })
     .Category(CATEGORY)
-    .FunctionHelp(_T("Return an array from a handle."))
-    .Documentation(_T("Retrieve an array created by ARRAY.SET."))
+    .FunctionHelp(X_("Return an array from a handle."))
+    .Documentation(X_("Retrieve an array created by ARRAY.SET."))
 );
-_FP12* WINAPI xll_array_get(HANDLEX h)
+_FPX* WINAPI xll_array_get(HANDLEX h)
 {
 #pragma XLLEXPORT
     try {
-        return handle<xll::FP12>(h)->get();
+        return handle<xll::FPX>(h)->get();
     }
     catch (const std::exception& ex) {
         XLL_ERROR(ex.what());
@@ -44,29 +48,31 @@ _FP12* WINAPI xll_array_get(HANDLEX h)
     return 0;
 }
 
-static AddIn xai_array_apply(
-    Function(XLL_LPOPER, L"?xll_array_apply", L"ARRAY.APPLY")
-    .Arg(XLL_LPOPER, L"f", L"is a handle to a user defined function.")
-    .Arg(XLL_LPOPER, L"x", L"is an array of values for the first argument.")
-    .Arg(XLL_LPOPER, L"y", L"is an array of values for the second argument.")
+static AddInX xai_array_apply(
+    FunctionX(XLL_LPOPERX, X_("?xll_array_apply"), X_("ARRAY.APPLY"))
+    .Args({
+        ArgX(XLL_LPOPERX, X_("f"), X_("is a handle to a user defined function.")),
+        ArgX(XLL_LPOPERX, X_("x"), X_("is an array of values for the first argument.")),
+        ArgX(XLL_LPOPERX, X_("y"), X_("is an array of values for the second argument."))
+    })
     .Category(CATEGORY)
-    .FunctionHelp(L"Return a matrix of values.")
+    .FunctionHelp(X_("Return a matrix of values."))
     .Documentation(
-        L"Return a two-dimensional array of f(x,y). "
-        L"If y is missing then return a one-dimensional array of f(x). "
+        X_("Return a two-dimensional array of f(x,y). ")
+        X_("If y is missing then return a one-dimensional array of f(x). ")
     )
 );
-LPOPER WINAPI xll_array_apply(const LPOPER pf, const LPOPER px, const LPOPER py)
+LPOPERX WINAPI xll_array_apply(const LPOPERX pf, const LPOPERX px, const LPOPERX py)
 {
 #pragma XLLEXPORT
-    static OPER result;
+    static OPERX result;
 
     try {
-        if (py->isMissing()) {
+        if (py->xltype == xltypeMissing) {
             result.resize(px->size(), 1);
 
             for (WORD i = 0; i < px->size(); ++i) {
-                result[i] = Excel(xlUDF, *pf, (*px)[i]);
+                result[i] = ExcelX(xlUDF, *pf, (*px)[i]);
             }
         }
         else {
@@ -74,7 +80,7 @@ LPOPER WINAPI xll_array_apply(const LPOPER pf, const LPOPER px, const LPOPER py)
 
             for (WORD i = 0; i < px->size(); ++i) {
                 for (WORD j = 0; j < py->size(); ++j) {
-                    result(i, j) = Excel(xlUDF, *pf, (*px)[i], (*py)[j]);
+                    result(i, j) = ExcelX(xlUDF, *pf, (*px)[i], (*py)[j]);
                 }
             }
         }
@@ -88,22 +94,24 @@ LPOPER WINAPI xll_array_apply(const LPOPER pf, const LPOPER px, const LPOPER py)
     return &result;
 }
 
-AddIn xai_array_interval(
-    Function(XLL_FP, L"?xll_array_interval", L"ARRAY.INTERVAL")
-    .Number(L"start", L"is the first value of the array.")
-    .Number(L"stop", L"is the last value of the array.")
-    .Number(L"step", L"is the step size or count.")
-    .Category(L"ARRAY")
-    .FunctionHelp(L"Return an interval from start to stop (inclusive).")
+AddInX xai_array_interval(
+    FunctionX(XLL_FPX, X_("?xll_array_intervaX_("), X_(")ARRAY.INTERVAX_("))
+    .Args({
+        ArgX(XLL_DOUBLEX, X_(")start"), X_("is the first value of the array.")),
+        ArgX(XLL_DOUBLEX, X_("stop"), X_("is the last value of the array.")),
+        ArgX(XLL_DOUBLEX, X_("step"), X_("is the step size or count."))
+    })
+    .Category(X_("ARRAY"))
+    .FunctionHelp(X_("Return an interval from start to stop (inclusive)."))
     .Documentation(
-        L"If step is less than 1, use that as the increment. "
-        L"If step is greater than 1, use that as the count for an array of equally spaced elements. "
+        X_("If step is less than 1, use that as the increment. ")
+        X_("If step is greater than 1, use that as the count for an array of equally spaced elements. ")
     )
 );
-_FP12* WINAPI xll_array_interval(double b, double e, double n)
+_FPX* WINAPI xll_array_interval(double b, double e, double n)
 {
 #pragma XLLEXPORT
-    static xll::FP12 result;
+    static xll::FPX result;
 
     try {
         ensure(b < e);
@@ -131,23 +139,25 @@ _FP12* WINAPI xll_array_interval(double b, double e, double n)
     return result.get();
 }
 
-AddIn xai_array_slice(
-    Function(XLL_FP, L"?xll_array_slice", L"ARRAY.SLICE")
-    .Array(L"Array", L"is an array for numbers.")
-    .Word(L"start", L"is the first index into the the array.")
-    .Word(L"stride", L"is the step increment.")
-    .Word(L"count", L"is the number of elements to take.")
-    .Category(L"ARRAY")
-    .FunctionHelp(L"Return a slice of an array.")
+AddInX xai_array_slice(
+    FunctionX(XLL_FPX, X_("?xll_array_slice"), X_("ARRAY.SLICE"))
+    .Args({
+        ArgX(XLL_FPX, X_("Array"), X_("is an array for numbers.")),
+        ArgX(XLL_WORDX, X_("start"), X_("is the first index into the the array.")),
+        ArgX(XLL_WORDX, X_("stride"), X_("is the step increment.")),
+        ArgX(XLL_WORDX, X_("count"), X_("is the number of elements to take."))
+    })
+    .Category(X_("ARRAY"))
+    .FunctionHelp(X_("Return a slice of an array."))
     .Documentation(
-        L"Return array elements at start, start + stride, ..., start + (count-1)*stride. "
-        L"If count is zero then all available elements are taken. "
+        X_("Return array elements at start, start + stride, ..., start + (count-1)*stride. ")
+        X_("If count is zero then all available elements are taken. ")
     )
 );
-_FP12* WINAPI xll_array_slice(const _FP12* pa, WORD i, WORD di, WORD n)
+_FPX* WINAPI xll_array_slice(const _FPX* pa, WORD i, WORD di, WORD n)
 {
 #pragma XLLEXPORT
-    static xll::FP12 result;
+    static xll::FPX result;
 
     try {
         ensure(i < size(*pa));
@@ -171,19 +181,21 @@ _FP12* WINAPI xll_array_slice(const _FP12* pa, WORD i, WORD di, WORD n)
     return result.get();
 }
 
-AddIn xai_array_sort(
-    Function(XLL_FP, L"?xll_array_sort", L"ARRAY.SORT")
-    .Array(L"array", L"is the array to be sorted.")
-    .Long(L"n", L"is the number of elements to sort.")
+AddInX xai_array_sort(
+    FunctionX(XLL_FPX, X_("?xll_array_sort"), X_("ARRAY.SORT"))
+    .Args({
+        ArgX(XLL_FPX, X_("array"), X_("is the array to be sorted.")),
+        ArgX(XLL_LONGX, X_("n"), X_("is the number of elements to sort."))
+    })
     .Category(CATEGORY)
-    .FunctionHelp(L"Sort an array of numbers.")
+    .FunctionHelp(X_("Sort an array of numbers."))
     .Documentation(LR"(
 Sort an array in numeric order. If n is zero then all elements are sorted from high to low. 
 If n is -1 all elements are sorted from low to high. Other values of n perform a partial sort
 in decending order if n is positive and increasing order if n is negative.
 )")
 );
-_FP12* WINAPI xll_array_sort(_FP12* pa, LONG n)
+_FPX* WINAPI xll_array_sort(_FPX* pa, LONG n)
 {
 #pragma XLLEXPORT
 
@@ -203,12 +215,14 @@ _FP12* WINAPI xll_array_sort(_FP12* pa, LONG n)
     return pa;
 }
 
-AddIn xai_array_grade(
-    Function(XLL_FP, L"?xll_array_grade", L"ARRAY.GRADE")
-    .Array(L"array", L"is the array to be graded.")
-    .Long(L"n", L"is the number of elements to grade.")
+AddInX xai_array_grade(
+    FunctionX(XLL_FPX, X_("?xll_array_grade"), X_("ARRAY.GRADE"))
+    .Args({
+        ArgX(XLL_FPX, X_("array"), X_("is the array to be graded.")),
+        ArgX(XLL_LONGX, X_("n"), X_("is the number of elements to grade."))
+    })
     .Category(CATEGORY)
-    .FunctionHelp(L"Grade an array of numbers.")
+    .FunctionHelp(X_("Grade an array of numbers."))
     .Documentation(LR"(
 Grade an array in numeric order. If n is zero then all elements are graded from high to low. 
 If n is -1 all elements are graded from low to high. Other values of n perform a partial grade
@@ -218,12 +232,12 @@ The result of INDEX(a, 1 + ARRAY.GRADE(a,n)) is identical to ARRAY.SORT(a,n).
 );
 #pragma warning(push)
 #pragma warning(disable: 4244)
-_FP12* WINAPI xll_array_grade(const _FP12* pa, LONG n)
+_FPX* WINAPI xll_array_grade(const _FPX* pa, LONG n)
 {
 #pragma XLLEXPORT
-    static xll::FP12 iota;
+    static xll::FPX iota;
     
-    iota.resize(size(*pa));
+    iota.resize(pa->rows, pa->columns);
 
     for (int i = 0; i < iota.size(); ++i)
         iota[i] = i;
@@ -252,19 +266,21 @@ _FP12* WINAPI xll_array_grade(const _FP12* pa, LONG n)
 static std::default_random_engine e;
 
 static AddInX xai_array_random(
-    FunctionX(XLL_FP, _T("?xll_array_random"), _T("ARRAY.RANDOM"))
-    .Arg(XLL_WORD, _T("Rows"), _T("is the number of rows."))
-    .Arg(XLL_WORD, _T("Columns"), _T("is the number of columns."))
-    .Arg(XLL_DOUBLE, _T("_Min"), _T("is the optional lower bound of the random numbers generated. Default is 0."))
-    .Arg(XLL_DOUBLE, _T("_Max"), _T("is the optional upper bound of the random numbers generated. Default is 1. "))
+    FunctionX(XLL_FPX, X_("?xll_array_random"), X_("ARRAY.RANDOM"))
+    .Args({
+        ArgX(XLL_WORDX, X_("Rows"), X_("is the number of rows.")),
+        ArgX(XLL_WORDX, X_("Columns"), X_("is the number of columns.")),
+        ArgX(XLL_DOUBLEX, X_("_Min"), X_("is the optional lower bound of the random numbers generated. Default is 0.")),
+        ArgX(XLL_DOUBLEX, X_("_Max"), X_("is the optional upper bound of the random numbers generated. Default is 1. "))
+    })
     .Category(CATEGORY)
-    .FunctionHelp(_T("Return a Rows x Columns array of uniformly distributed random numbers between Min and Max."))
-    .Documentation(_T("Uses std::default_random_engine and std::uniform_real_distribution."))
+    .FunctionHelp(X_("Return a Rows x Columns array of uniformly distributed random numbers between Min and Max."))
+    .Documentation(X_("Uses std::default_random_engine and std::uniform_real_distribution."))
 );  
-_FP12* xll_array_random(WORD r, WORD c, double min, double max)
+_FPX* xll_array_random(WORD r, WORD c, double min, double max)
 {
 #pragma XLLEXPORT
-    static xll::FP12 a;
+    static xll::FPX a;
 
     a.resize(r, c);
 

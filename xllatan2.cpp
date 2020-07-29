@@ -11,11 +11,11 @@
 using namespace xll;
 
 static AddInX xai_atan2(
-	FunctionX(XLL_DOUBLE, _T("?xll_atan2"), _T("XLL.ATAN2"))
-	.Arg(XLL_DOUBLE, _T("y"), _T("is the numerator."), _T("0.5"))
-	.Arg(XLL_DOUBLE, _T("x"), _T("is the denominator."), _T("5"))
+	FunctionX(XLL_DOUBLEX, X_("?xll_atan2"), X_("XLL.ATAN2"))
+	.Arg(XLL_DOUBLEX, X_("y"), X_("is the numerator."), X_("0.5"))
+	.Arg(XLL_DOUBLEX, X_("x"), X_("is the denominator."), X_("5"))
 	.Category(CATEGORY)
-	.FunctionHelp(_T("Computes the arctan of y/x"))
+	.FunctionHelp(X_("Computes the arctan of y/x"))
 	.Documentation(LR"(
 Computes the arctangent of two double values, and stores an integer double value with the sign 
 and its approximate quadrants in a location that's specified in a parameter.

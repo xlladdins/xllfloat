@@ -10,16 +10,18 @@
 using namespace xll;
 
 static AddInX xai_ulp(
-	FunctionX(XLL_DOUBLE, _T("?xll_ulp"), _T("ULP"))
-	.Arg(XLL_DOUBLE, _T("x"), _T("is a floating point number."))
-	.Arg(XLL_DOUBLE, _T("y"), _T("is a floating point number. "))
+	FunctionX(XLL_DOUBLEX, X_("?xll_ulp"), X_("ULP"))
+	.Args({
+		ArgX(XLL_DOUBLEX, X_("x"), X_("is a floating point number.")),
+		ArgX(XLL_DOUBLEX, X_("y"), X_("is a floating point number."))
+	})
 	.Category(CATEGORY)
-	.FunctionHelp(_T("The number of floating point values that can be exactly represented between x and y"))
+	.FunctionHelp(X_("The number of floating point values that can be exactly represented between x and y"))
 	.Documentation(
-		_T("Note <codeInline>ULP(y, x) = n</codeInline> if and only ")
-		_T("if <codeInline>y = NEXTAFTER(x, n)</codeInline>.")
+		X_("Note <codeInline>ULP(y, x) = n</codeInline> if and only ")
+		X_("if <codeInline>y = NEXTAFTER(x, n)</codeInline>.")
 /*		,
-		xml::xlink(_T("NEXTAFTER"))
+		xml::xlink(X_("NEXTAFTER"))
 */	)
 );
 double WINAPI

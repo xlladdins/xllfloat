@@ -12,11 +12,11 @@
 using namespace xll;
 
 static AddInX xai_fmin(
-	FunctionX(XLL_DOUBLE, _T("?xll_fmin"), _T("XLL.FMIN"))
-	.Arg(XLL_DOUBLE, _T("x"), _T("is the first input floating point value."), _T("1.1"))
-	.Arg(XLL_DOUBLE, _T("y"), _T("is the second input floating point value."), _T("3.22"))
+	FunctionX(XLL_DOUBLEX, X_("?xll_fmin"), X_("XLL.FMIN"))
+	.Arg(XLL_DOUBLEX, X_("x"), X_("is the first input floating point value."), X_("1.1"))
+	.Arg(XLL_DOUBLEX, X_("y"), X_("is the second input floating point value."), X_("3.22"))
 	.Category(CATEGORY)
-	.FunctionHelp(_T("Computes the smaller of two floating point values."))
+	.FunctionHelp(X_("Computes the smaller of two floating point values."))
 	.Documentation(LR"(
 		Returns the smaller of two floating point values.
 	)")

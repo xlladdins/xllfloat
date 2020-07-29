@@ -1,16 +1,19 @@
 // reverse.cpp - reverse elements of an array
+// !!! move out of xllfloat
 #include <algorithm>
-#include "xll12/xll/xll.h"
+#include "xll/xll/xll.h"
 
 using namespace xll;
 
-AddIn xai_reverse(
-    Function(XLL_FP, L"?xll_reverse", L"REVERSE")
-    .Arg(XLL_FP, L"array", L"is an array of numbers.")
-    .FunctionHelp(L"Reverse an array of numbers.")
-    .Category(L"XLL")
+AddInX xai_reverse(
+    FunctionX(XLL_FPX, X_("?xll_reverse"), X_("REVERSE"))
+    .Args({
+        ArgX(XLL_FPX, X_("array"), X_("is an array of numbers."))
+    })
+    .FunctionHelp(X_("Reverse an array of numbers."))
+    .Category(X_("XLL"))
 );
-_FP12* WINAPI xll_reverse(_FP12* pa)
+_FPX* WINAPI xll_reverse(_FPX* pa)
 {
 #pragma XLLEXPORT
 

@@ -7,17 +7,17 @@
 #include "xllfloat.h"
 
 #ifndef CATEGORY
-#define CATEGORY _T("Float")
+#define CATEGORY X_("Float")
 #endif
 
 using namespace xll;
 
 static AddInX xai_pow(
-	FunctionX(XLL_DOUBLE, _T("?xll_pow"), _T("XLL.POW"))
-	.Arg(XLL_DOUBLE, _T("x"), _T("the number to be raised"))
-	.Arg(XLL_DOUBLE, _T("y"), _T("The power that it raise to "))
+	FunctionX(XLL_DOUBLEX, X_("?xll_pow"), X_("XLL.POW"))
+	.Arg(XLL_DOUBLEX, X_("x"), X_("the number to be raised"))
+	.Arg(XLL_DOUBLEX, X_("y"), X_("The power that it raise to "))
 	.Category(CATEGORY)
-	.FunctionHelp(_T("Returns x raised to the power of y"))
+	.FunctionHelp(X_("Returns x raised to the power of y"))
 	.Documentation(LR"(
 		The pow function returns the x raised to the power of y
 		There is no error return.

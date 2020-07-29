@@ -11,10 +11,10 @@
 using namespace xll;
 
 static AddInX xai_erf(
-	FunctionX(XLL_DOUBLE, _T("?xll_erf"), _T("XLL.ERF"))
-	.Arg(XLL_DOUBLE, _T("X"), _T("is the valur of input in the erf."), _T("1"))
+	FunctionX(XLL_DOUBLEX, X_("?xll_erf"), X_("XLL.ERF"))
+	.Arg(XLL_DOUBLEX, X_("X"), X_("is the valur of input in the erf."), X_("1"))
 	.Category(CATEGORY)
-	.FunctionHelp(_T("Computes the ERF values with respect to the input 'X'."))
+	.FunctionHelp(X_("Computes the ERF values with respect to the input 'X'."))
 	.Documentation(LR"(
 In mathematics, the error function (also called the Gauss error function) is a special function (non-elementary) 
 of sigmoid shape that occurs in probability, statistics, and partial differential equations describing diffusion.

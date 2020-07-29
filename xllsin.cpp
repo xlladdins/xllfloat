@@ -5,15 +5,15 @@
 #include "xllfloat.h"
 
 #ifndef CATEGORY
-#define CATEGORY _T("Float")
+#define CATEGORY X_("Float")
 #endif
 
 using namespace xll;
 
-static AddIn xai_sin(
-	Function(XLL_DOUBLE, _T("?xll_sin"), _T("XLL.SIN"))
-	.Arg(XLL_DOUBLE, _T("x"), _T("is a floating number."))
-	.FunctionHelp(_T("Returns sin(x)"))
+static AddInX xai_sin(
+	FunctionX(XLL_DOUBLEX, X_("?xll_sin"), X_("XLL.SIN"))
+	.Arg(XLL_DOUBLEX, X_("x"), X_("is a floating number."))
+	.FunctionHelp(X_("Returns sin(x)"))
 	.Category(CATEGORY)
 	.Documentation(LR"(
         Evaluates the sin(x) using the Horner method.

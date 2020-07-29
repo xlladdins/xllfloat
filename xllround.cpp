@@ -11,10 +11,10 @@
 using namespace xll;
 
 static AddInX xai_round(
-	FunctionX(XLL_DOUBLE, _T("?xll_round"), _T("XLL.ROUND"))
-	.Arg(XLL_DOUBLE, _T("x"), _T("value to be rounded"))
+	FunctionX(XLL_DOUBLEX, X_("?xll_round"), X_("XLL.ROUND"))
+	.Arg(XLL_DOUBLEX, X_("x"), X_("value to be rounded"))
 	.Category(CATEGORY)
-	.FunctionHelp(_T("Returns the integral value that is nearest to x, with halfway cases rounded away from zero."))
+	.FunctionHelp(X_("Returns the integral value that is nearest to x, with halfway cases rounded away from zero."))
 	.Documentation(LR"(The round() function in C++ returns the integral value that is nearest to the argument, with halfway cases rounded away from zero.)")
 );
 

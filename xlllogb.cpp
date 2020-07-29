@@ -13,10 +13,10 @@
 using namespace xll;
 
 static AddInX xai_logb(
-	FunctionX(XLL_DOUBLE, _T("?xll_logb"), _T("XLL.LOGB"))
-	.Arg(XLL_DOUBLE, _T("x"), _T("is a double number "))
+	FunctionX(XLL_DOUBLEX, X_("?xll_logb"), X_("XLL.LOGB"))
+	.Arg(XLL_DOUBLEX, X_("x"), X_("is a double number "))
 	.Category(CATEGORY)
-	.FunctionHelp(_T("Returns the exponent of x"))
+	.FunctionHelp(X_("Returns the exponent of x"))
 	.Documentation(LR"(
         Return the exponent of a number.
     )")

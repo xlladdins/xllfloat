@@ -11,10 +11,10 @@
 using namespace xll;
 
 static AddInX xai_erfc(
-	FunctionX(XLL_DOUBLE, _T("?xll_erfc"), _T("XLL.ERFC"))
-	.Arg(XLL_DOUBLE, _T("x"), _T("is the number."), _T("0"))
+	FunctionX(XLL_DOUBLEX, X_("?xll_erfc"), X_("XLL.ERFC"))
+	.Arg(XLL_DOUBLEX, X_("x"), X_("is the number."), X_("0"))
 	.Category(CATEGORY)
-	.FunctionHelp(_T("Computes complementary error function."))
+	.FunctionHelp(X_("Computes complementary error function."))
 	.Documentation(LR"(
 return the complementary Gauss error function of x.
 	)")

@@ -3,20 +3,22 @@
 #include "xllfloat.h"
 
 #ifndef CATEGORY
-#define CATEGORY _T("Float")
+#define CATEGORY X_("Float")
 #endif
 
 using namespace xll;
 
-static AddIn xai_chgsign(
-	Function(XLL_DOUBLE, _T("?xll_chgsign"), _T("CHGSIGN"))
-	.Arg(XLL_DOUBLE, _T("x"), _T("is a floating point number."))
+AddInX xai_chgsign(
+	FunctionX(XLL_DOUBLEX, X_("?xll_chgsign"), X_("CHGSIGN"))
+	.Args({
+		ArgX(XLL_DOUBLEX, X_("x"), X_("is a floating point number."))
+	})
 	.Category(CATEGORY)
-	.FunctionHelp(_T("Reverses the sign of x by calling _chgsign()"))
-	.Documentation(LR"(
+	.FunctionHelp(X_("Reverses the sign of x by calling _chgsign()"))
+	.Documentation(X_(R"(
         The _chgsign functions return a value that's equal to the floating-point argument x, 
         but with its sign reversed. There is no error return.
-    )")
+    )"))
 );
 double WINAPI
 xll_chgsign(double x)

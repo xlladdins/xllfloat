@@ -11,12 +11,14 @@
 using namespace xll;
 
 static AddInX xai_fma(
-	FunctionX(XLL_DOUBLE, _T("?xll_fma"), _T("XLL.FMA"))
-	.Arg(XLL_DOUBLE, _T("a"), _T("is the first input."), _T("10"))
-	.Arg(XLL_DOUBLE, _T("b"), _T("is the second input."), _T("20"))
-	.Arg(XLL_DOUBLE, _T("c"), _T("is the third input."), _T("30"))
+	FunctionX(XLL_DOUBLEX, X_("?xll_fma"), X_("XLL.FMA"))
+	.Args({
+		ArgX(XLL_DOUBLEX, X_("a"), X_("is the first input.")/*!!!, X_("10")*/),
+		ArgX(XLL_DOUBLEX, X_("b"), X_("is the second input.")/*!!!, X_("20")*/),
+		ArgX(XLL_DOUBLEX, X_("c"), X_("is the third input.")/*!!!, X_("30")*/)
+	})
 	.Category(CATEGORY)
-	.FunctionHelp(_T("Computes the sum of the product of the first and second inputs and the third input.\n\n a*b+c"))
+	.FunctionHelp(X_("Computes the sum of the product of the first and second inputs and the third input.\n\n a*b+c"))
 	.Documentation(LR"(
 Computes the sum of the product of the first and second inputs and the third inputs (Fused Multiply-Add)
 Given three inputs a, b, and c, the function computes a * b + c without loss of precision in any intermediate step.
@@ -34,6 +36,7 @@ xll_fma(double a, double b, double c)
 	return se;
 }
 
+/*
 #ifdef _DEBUG
 
 xll::test test_xll_fma([]() {
@@ -46,3 +49,4 @@ xll::test test_xll_fma([]() {
 	});
 
 #endif // _DEBUG
+*/

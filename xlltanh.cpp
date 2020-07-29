@@ -13,10 +13,10 @@
 using namespace xll;
 
 static AddInX xai_tanh(
-	FunctionX(XLL_DOUBLE, _T("?xll_tanh"), _T("XLL.TANH"))
-	.Arg(XLL_DOUBLE, _T("x"), _T("is a floating point number "))
+	FunctionX(XLL_DOUBLEX, X_("?xll_tanh"), X_("XLL.TANH"))
+	.Arg(XLL_DOUBLEX, X_("x"), X_("is a floating point number "))
 	.Category(CATEGORY)
-	.FunctionHelp(_T("Returns tanh(x)"))
+	.FunctionHelp(X_("Returns tanh(x)"))
 	.Documentation(LR"(Computes the hyperbolic tangent of x)")
 );
 

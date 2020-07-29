@@ -6,16 +6,16 @@
 #include "xllfloat.h"
 
 #ifndef CATEGORY
-#define CATEGORY _T("Float")
+#define CATEGORY X_("Float")
 #endif
 
 using namespace xll;
 
-static AddIn xai_exp2(
-	Function(XLL_DOUBLE, _T("?xll_exp2"), _T("XLL.EXP2"))
-	.Arg(XLL_DOUBLE, _T("x"), _T("is a floating point number."))
+static AddInX xai_exp2(
+	FunctionX(XLL_DOUBLEX, X_("?xll_exp2"), X_("XLL.EXP2"))
+	.Arg(XLL_DOUBLEX, X_("x"), X_("is a floating point number."))
 	.Category(CATEGORY)
-	.FunctionHelp(_T("return exp2(x) by calling _exp2()"))
+	.FunctionHelp(X_("return exp2(x) by calling _exp2()"))
 	.Documentation(LR"(
         The _exp2 functions return a value that's equal to exp2(x). There will be no error return.
     )")

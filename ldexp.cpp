@@ -9,11 +9,13 @@
 using namespace xll;
 
 static AddInX xai_ldexp(
-	FunctionX(XLL_DOUBLE, _T("?xll_ldexp"), _T("LDEXP"))
-	.Arg(XLL_DOUBLE, _T("sig"), _T("is the significand"))
-	.Arg(XLL_LONG, _T("exp"), _T("is the exponent "))
+	FunctionX(XLL_DOUBLEX, X_("?xll_ldexp"), X_("LDEXP"))
+	.Args({
+		ArgX(XLL_DOUBLEX, X_("sig"), X_("is the significand")),
+		ArgX(XLL_LONGX, X_("exp"), X_("is the exponent "))
+	})
 	.Category(CATEGORY)
-	.FunctionHelp(_T("Returns sig*2^exp using the C library function ldexp()"))
+	.FunctionHelp(X_("Returns sig*2^exp using the C library function ldexp()"))
 	.Documentation(LR"("This function is the inverse of <codeInline>FREXP</codeInline>.)")
 );
 double WINAPI

@@ -6,17 +6,17 @@
 #include "xllfloat.h"
 
 #ifndef CATEGORY
-#define CATEGORY _T("Float")
+#define CATEGORY X_("Float")
 #endif
 
 using namespace xll;
 
-static AddIn xai_fmax(
-	Function(XLL_DOUBLE, _T("?xll_fmax"), _T("XLL.FMAX"))
-	.Arg(XLL_DOUBLE, _T("x"), _T("is a floating point number"))
-	.Arg(XLL_DOUBLE, _T("y"), _T("is a floating point number"))
+static AddInX xai_fmax(
+	FunctionX(XLL_DOUBLEX, X_("?xll_fmax"), X_("XLL.FMAX"))
+	.Arg(XLL_DOUBLEX, X_("x"), X_("is a floating point number"))
+	.Arg(XLL_DOUBLEX, X_("y"), X_("is a floating point number"))
 	.Category(CATEGORY)
-	.FunctionHelp(_T("Returns larger of two floating point values of x and y by calling XLL.FMAX()"))
+	.FunctionHelp(X_("Returns larger of two floating point values of x and y by calling XLL.FMAX()"))
 	.Documentation(LR"(
         The fmax functions return a floating-point value that is the larger between the input floating point values x and y. 
         There is no error return.

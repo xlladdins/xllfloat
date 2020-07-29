@@ -3,19 +3,21 @@
 #include "xllfloat.h"
 
 #ifndef CATEGORY
-#define CATEGORY _T("Float")
+#define CATEGORY X_("Float")
 #endif
 
 using namespace xll;
 
 static AddInX xai_nextafter(
-	FunctionX(XLL_DOUBLE, _T("?xll_nextafter"), _T("NEXTAFTER"))
-	.Arg(XLL_DOUBLE, _T("x"), _T("is a floating point number"))
-	.Arg(XLL_LONG, _T("n"), _T("is an integer "))
+	FunctionX(XLL_DOUBLEX, X_("?xll_nextafter"), X_("NEXTAFTER"))
+	.Args({
+		ArgX(XLL_DOUBLEX, X_("x"), X_("is a floating point number")),
+		ArgX(XLL_LONGX, X_("n"), X_("is an integer "))
+	})
 	.Category(CATEGORY)
-	.FunctionHelp(_T("Returns the n-th closest representable neighbor of x by calling _nextafter()"))
+	.FunctionHelp(X_("Returns the n-th closest representable neighbor of x by calling _nextafter()"))
 	.Documentation(
-		_T("Note <codeInline>ULP(y, x) = n</codeInline> if and only if <codeInline>y = NEXTAFTER(x, n)</codeInline>.")
+		X_("Note <codeInline>ULP(y, x) = n</codeInline> if and only if <codeInline>y = NEXTAFTER(x, n)</codeInline>.")
 /*		, // see also
 		xml::xlink("ULP")
 */	)

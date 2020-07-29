@@ -9,10 +9,12 @@
 using namespace xll;
 
 static AddInX xai_frexp(
-	FunctionX(XLL_FP, _T("?xll_frexp"), _T("FREXP"))
-	.Arg(XLL_DOUBLE, _T("x"), _T("is a floating point number "))
+	FunctionX(XLL_FPX, X_("?xll_frexp"), X_("FREXP"))
+	.Args({
+		ArgX(XLL_DOUBLEX, X_("x"), X_("is a floating point number "))
+	})
 	.Category(CATEGORY)
-	.FunctionHelp(_T("Returns array {sig, exp} where 0.5 le sig lt 1 and x = sig*2^exp"))
+	.FunctionHelp(X_("Returns array {sig, exp} where 0.5 le sig lt 1 and x = sig*2^exp"))
 	.Documentation(LR"(The inverse of <codeInline>LDEXP</codeInline>.)")
 );
 _FP12* WINAPI

@@ -5,17 +5,17 @@
 #include "xllfloat.h"
 
 #ifndef CATEGORY
-#define CATEGORY _T("Float")
+#define CATEGORY X_("Float")
 #endif
 
 using namespace xll;
 
-AddIn xai_fmod(
-	Function(XLL_DOUBLE, L"?xll_fmod", L"XLL.FMOD")
-	.Arg(XLL_DOUBLE, L"x", L"is the numerator.")
-	.Arg(XLL_DOUBLE, L"y", L"is the denominator.")
-	.FunctionHelp(L"the remainder of x divided by y")
-	.Category(L"XLL")
+AddInX xai_fmod(
+	FunctionX(XLL_DOUBLEX, X_("?xll_fmod"), X_("XLL.FMOD"))
+	.Arg(XLL_DOUBLEX, X_("x"), X_("is the numerator."))
+	.Arg(XLL_DOUBLEX, X_("y"), X_("is the denominator."))
+	.FunctionHelp(X_("the remainder of x divided by y"))
+	.Category(X_("XLL"))
 	.Documentation(LR"(
         The remainder of x divided by y.
     )")

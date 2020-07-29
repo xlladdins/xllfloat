@@ -11,10 +11,10 @@
 
 using namespace xll;
 
-AddIn xai_cbrt(
-	Function(XLL_DOUBLE, L"?xll_cbrt", L"XLL.CBRT")
-	.Arg(XLL_DOUBLE, L"x", L"is the value at which to evaluate the cubic root.")
-	.Category(L"XLL")
+AddInX xai_cbrt(
+	FunctionX(XLL_DOUBLEX, X_("?xll_cbrt"), X_("XLL.CBRT"))
+	.Arg(XLL_DOUBLEX, X_("x"), X_("is the value at which to evaluate the cubic root."))
+	.Category(X_("XLL"))
 	.Documentation(LR"(
         Evaluates the cubic root of x.
     )")

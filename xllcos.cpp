@@ -5,16 +5,16 @@
 #include "xllfloat.h"
 
 #ifndef CATEGORY
-#define CATEGORY _T("Float")
+#define CATEGORY X_("Float")
 #endif
 
 using namespace xll;
 
-static AddIn xai_cos(
-	Function(XLL_DOUBLE, _T("?xll_cos"), _T("XLL.COS"))
-	.Arg(XLL_DOUBLE, _T("x"), _T("is a floating point number "))
+static AddInX xai_cos(
+	FunctionX(XLL_DOUBLEX, X_("?xll_cos"), X_("XLL.COS"))
+	.Arg(XLL_DOUBLEX, X_("x"), X_("is a floating point number "))
 	.Category(CATEGORY)
-	.FunctionHelp(_T("Compute cos(x)"))
+	.FunctionHelp(X_("Compute cos(x)"))
 	.Documentation(LR"(
         This function calculates the value of cos(x) 
     )")

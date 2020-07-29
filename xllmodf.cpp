@@ -5,15 +5,15 @@
 #include "xllfloat.h"
 
 #ifndef CATEGORY
-#define CATEGORY _T("Float")
+#define CATEGORY X_("Float")
 #endif
 
 using namespace xll;
-static AddIn xai_modf(
-	Function(XLL_FP, _T("?xll_modf"), _T("XLL.MODF"))
-	.Arg(XLL_DOUBLE, _T("x"), _T("is a floating point number."))
+static AddInX xai_modf(
+	FunctionX(XLL_FPX, X_("?xll_modf"), X_("XLL.MODF"))
+	.Arg(XLL_DOUBLEX, X_("x"), X_("is a floating point number."))
 	.Category(CATEGORY)
-	.FunctionHelp(_T("Decomposes a number into integer and fractional parts"))
+	.FunctionHelp(X_("Decomposes a number into integer and fractional parts"))
 	.Documentation(LR"(
         The _modf functions return an array with two elements that are the integer part of the number and the fractional part of the number. There is no error return.
     )")

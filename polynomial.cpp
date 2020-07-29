@@ -1,19 +1,21 @@
 // polynomial.cpp evaluate a polynomial
-#include "xll12/xll/xll.h"
+#include "xll/xll/xll.h"
 
 using namespace xll;
 
-AddIn xai_polynomial(
-    Function(XLL_DOUBLE, L"?xll_polynomial", L"POLYNOMIAL")
-    .Arg(XLL_FP, L"coefficients", L"is an array of polynomial coefficients.")
-    .Arg(XLL_DOUBLE, L"x", L"is the value at which to evaluate the polynomial.")
-    .FunctionHelp(L"Returns c[0] + c[1]*x + c[2]*x^2 + ... where c is the array of coefficients")
-    .Category(L"XLL")
+AddInX xai_polynomial(
+    FunctionX(XLL_DOUBLEX, X_("?xll_polynomial"), X_("POLYNOMIAL"))
+    .Args({
+        ArgX(XLL_FPX, X_("coefficients"), X_("is an array of polynomial coefficients.")),
+        ArgX(XLL_DOUBLEX, X_("x"), X_("is the value at which to evaluate the polynomial."))
+    })
+    .FunctionHelp(X_("Returns c[0] + c[1]*x + c[2]*x^2 + ... where c is the array of coefficients"))
+    .Category(X_("XLL"))
     .Documentation(LR"(
         Evaluates the polynomial using the Horner method.
     )")
 );
-double WINAPI xll_polynomial(const _FP12* pc, double x)
+double WINAPI xll_polynomial(const _FPX* pc, double x)
 {
 #pragma XLLEXPORT
     double result = 0;

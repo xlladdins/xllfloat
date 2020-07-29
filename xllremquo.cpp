@@ -11,11 +11,11 @@
 using namespace xll;
 
 static AddInX xai_remquo(
-	FunctionX(XLL_FP, _T("?xll_remquo"), _T("XLL.REMQUO"))
-	.Arg(XLL_DOUBLE, _T("numer"), _T("is the numerator."), _T("-10"))
-	.Arg(XLL_DOUBLE, _T("denom"), _T("is the denominator."), _T("3"))
+	FunctionX(XLL_FPX, X_("?xll_remquo"), X_("XLL.REMQUO"))
+	.Arg(XLL_DOUBLEX, X_("numer"), X_("is the numerator."), X_("-10"))
+	.Arg(XLL_DOUBLEX, X_("denom"), X_("is the denominator."), X_("3"))
 	.Category(CATEGORY)
-	.FunctionHelp(_T("Computes the remainder of two integer values."))
+	.FunctionHelp(X_("Computes the remainder of two integer values."))
 	.Documentation(LR"(
 Computes the remainder of two integer values, and stores an integer value with the sign 
 and approximate magnitude of the quotient in a location that's specified in a parameter.

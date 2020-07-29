@@ -6,7 +6,7 @@
 #ifdef _DEBUG
 #include <random>
 
-std::minstd_rand r;
+std::minstd_rand rng;
 
 template<class I>
 I slow_popcount(I i)
@@ -19,33 +19,37 @@ I slow_popcount(I i)
     return count;
 }
 template<class I>
-void test_popcount(void)
+int test_popcount(void)
 {
-    r.seed(std::random_device()());
+    rng.seed(std::random_device()());
 
     for (int n = 0; n < 100; ++n) {
-        I i = r(); // uint32_t
+        I i = rng(); // uint32_t
         I c0 = slow_popcount(i);
         I c1 = popcount(i);
         ensure (c0 == c1);
     }
+
+    return 0;
 }
 
-xll::test xll_test_popcount(test_popcount<uint32_t>);
+int xll_test_popcount = []() { return test_popcount<uint32_t>(); }();
 #endif // _DEBUG
 
 #ifndef CATEGORY
-#define CATEGORY _T("Float")
+#define CATEGORY X_("Float")
 #endif
 
 using namespace xll;
 
-static AddIn xai_popcount(
-	Function(XLL_LONG, _T("?xll_popcount"), _T("POPCOUNT.NUM"))
-	.Arg(XLL_DOUBLE, _T("Num"), _T("is a floating point number "))
+static AddInX xai_popcount(
+	FunctionX(XLL_LONGX, X_("?xll_popcount"), X_("POPCOUNT.NUM"))
+    .Args({
+	    ArgX(XLL_DOUBLEX, X_("Num"), X_("is a floating point number "))
+    })
 	.Category(CATEGORY)
-	.FunctionHelp(_T("Returns the Hamming weight of 64-bit floating point Num. It is the number of 1 bits in the base 2 representation"))
-	.Documentation(_T("The Hamming weight is the number of 1 bits in the base 2 representation. "))
+	.FunctionHelp(X_("Returns the Hamming weight of 64-bit floating point Num. It is the number of 1 bits in the base 2 representation"))
+	.Documentation(X_("The Hamming weight is the number of 1 bits in the base 2 representation. "))
 );
 LONG WINAPI
 xll_popcount(double x)

@@ -11,10 +11,12 @@
 using namespace xll;
 
 static AddInX xai_nearbyint(
-	FunctionX(XLL_DOUBLE, _T("?xll_nearbyint"), _T("XLL.NEARBYINT"))
-	.Arg(XLL_DOUBLE, _T("X"), _T("is the input number."))
+	FunctionX(XLL_DOUBLEX, X_("?xll_nearbyint"), X_("XLL.NEARBYINT"))
+	.Args({
+		ArgX(XLL_DOUBLEX, X_("X"), X_("is the input number."))
+	})
 	.Category(CATEGORY)
-	.FunctionHelp(_T("Return the nearest integer value to arg, according to the current rounding mode, is returned."))
+	.FunctionHelp(X_("Return the nearest integer value to arg, according to the current rounding mode, is returned."))
 	.Documentation(LR"(
 Return the nearest integer value to arg, according to the current rounding mode.
 	)")
@@ -31,7 +33,7 @@ xll_nearbyint(double value_input)
 	return result;
 #pragma warning(pop)
 }
-
+/*
 #ifdef _DEBUG
 
 xll::test test_xll_nearbyint([]() {
@@ -42,3 +44,4 @@ xll::test test_xll_nearbyint([]() {
 	});
 
 #endif // _DEBUG
+*/

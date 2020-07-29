@@ -3,13 +3,14 @@
 #include "xllfloat.h"
 
 #ifndef CATEGORY
-#define CATEGORY _T("Float")
+#define CATEGORY X_("Float")
 #endif
 using namespace xll;
-
-static AddIn xai_float(
+/*
+static AddInX xai_float(
 	Documentation(
-		L"Wrappers for &lt;cmath&gt;."
+		X_("Wrappers for &lt;cmath&gt;.")
 	)
     .Category(CATEGORY)
 );
+*/

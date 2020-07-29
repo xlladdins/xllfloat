@@ -6,16 +6,16 @@
 #include "xllfloat.h"
 
 #ifndef CATEGORY
-#define CATEGORY L"Float"
+#define CATEGORY X_("Float")
 #endif
 
 using namespace xll;
 
-static AddIn xai_asinh(
-	Function(XLL_DOUBLE, L"?xll_asinh", L"XLL.ASINH")
-	.Arg(XLL_DOUBLE, _T("x"), _T("is a floating point number."))
+static AddInX xai_asinh(
+	FunctionX(XLL_DOUBLEX, X_("?xll_asinh"), X_("XLL.ASINH"))
+	.Arg(XLL_DOUBLEX, X_("x"), X_("is a floating point number."))
 	.Category(CATEGORY)
-	.FunctionHelp(_T("Returns the area hyperbolic sine of x."))
+	.FunctionHelp(X_("Returns the area hyperbolic sine of x."))
 	.Documentation(LR"(
 Computes the area hyperbolic sine for the given floating point input.
     )")

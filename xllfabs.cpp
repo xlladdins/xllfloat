@@ -11,10 +11,10 @@
 using namespace xll;
 
 static AddInX xai_fabs(
-	FunctionX(XLL_DOUBLE, _T("?xll_fabs"), _T("XLL.FABS"))
-	.Arg(XLL_DOUBLE, _T("num"), _T("is a floating point number."))
+	FunctionX(XLL_DOUBLEX, X_("?xll_fabs"), X_("XLL.FABS"))
+	.Arg(XLL_DOUBLEX, X_("num"), X_("is a floating point number."))
 	.Category(CATEGORY)
-	.FunctionHelp(_T("Compute the absolute value of a floating point number."))
+	.FunctionHelp(X_("Compute the absolute value of a floating point number."))
 	.Documentation(LR"(
 Computes the absolute value of a floating point number, and return an floating point value with
 the sign to be positive and its magnitude to be the same as the input.

@@ -10,16 +10,16 @@
 #include "xllfloat.h"
 
 #ifndef CATEGORY
-#define CATEGORY _T("Float")
+#define CATEGORY X_("Float")
 #endif
 
 using namespace xll;
 
-static AddIn xai_arcosh(
-	Function(XLL_DOUBLE, _T("?xll_arcosh"), _T("ACOSH"))
-	.Arg(XLL_DOUBLE, _T("x"), _T("is a floating point number."))
+static AddInX xai_arcosh(
+	FunctionX(XLL_DOUBLEX, X_("?xll_arcosh"), X_("ACOSH"))
+	.Arg(XLL_DOUBLEX, X_("x"), X_("is a floating point number."))
 	.Category(CATEGORY)
-	.FunctionHelp(_T("computes the inverse hyperbolic cosine (arcosh(x)) by calling acosh()"))
+	.FunctionHelp(X_("computes the inverse hyperbolic cosine (arcosh(x)) by calling acosh()"))
 	.Documentation(LR"(
         The _arcosh functions return a value that's the inverse hyperbolic cosine (arcosh(x))
     )")

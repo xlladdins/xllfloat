@@ -1,52 +1,144 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="array.cpp" />
-    <ClCompile Include="chgsign.cpp" />
-    <ClCompile Include="copysign.cpp" />
-    <ClCompile Include="finite.cpp" />
-    <ClCompile Include="xllatan2.cpp" />
-    <ClCompile Include="xllerf.cpp" />
-    <ClCompile Include="xllasinh.cpp" />
-    <ClCompile Include="xllremquo.cpp" />
-    <ClCompile Include="ldexp.cpp" />
-    <ClCompile Include="polynomial.cpp" />
-    <ClCompile Include="reverse.cpp" />
-    <ClCompile Include="xllcos.cpp" />
-    <ClCompile Include="xllerfc.cpp" />
-    <ClCompile Include="xllfloat.cpp" />
-    <ClCompile Include="float_bits.cpp" />
-    <ClCompile Include="frexp.cpp" />
-    <ClCompile Include="limits.cpp" />
-    <ClCompile Include="nextafter.cpp" />
-    <ClCompile Include="popcount.cpp" />
-    <ClCompile Include="ulp.cpp" />
-    <ClCompile Include="xllpow.cpp" />
-    <ClCompile Include="xlllogb.cpp" />
-    <ClCompile Include="xllcbrt.cpp" />
-    <ClCompile Include="xllexpm1.cpp" />
-    <ClCompile Include="xllfmin.cpp" />
-    <ClCompile Include="xllsin.cpp" />
-    <ClCompile Include="xllround.cpp" />
-    <ClCompile Include="xllnearbyint.cpp" />
-    <ClCompile Include="xlltanh.cpp" />
-    <ClCompile Include="xllfabs.cpp" />
-    <ClCompile Include="xllmodf.cpp" />
-    <ClCompile Include="xllfmax.cpp" />
-    <ClCompile Include="xllexp2.cpp" />
-    <ClCompile Include="xllsinh.cpp" />
-    <ClCompile Include="xllcosh.cpp" />
-    <ClCompile Include="xllfmod.cpp" />
-    <ClCompile Include="xllacosh.cpp" />
-    <ClCompile Include="xllfma.cpp" />
+    <ClCompile Include="array.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="chgsign.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="copysign.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="finite.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="float_bits.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="frexp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ldexp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="limits.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="nextafter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="polynomial.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="popcount.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="reverse.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ulp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xllacosh.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xllasinh.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xllatan2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xllcbrt.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xllcos.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xllcosh.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xllerf.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xllerfc.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xllexp2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xllexpm1.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xllfabs.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xllfloat.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xllfma.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xllfmax.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xllfmin.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xllfmod.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xlllogb.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xllmodf.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xllnearbyint.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xllpow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xllremquo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xllround.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xllsin.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xllsinh.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xlltanh.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="fmsroot1d.h" />
-    <ClInclude Include="xllfloat.h" />
-    <ClInclude Include="popcount.h" />
-    <ClInclude Include="ulp.h" />
+    <ClInclude Include="fmsroot1d.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="popcount.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ulp.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xllfloat.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{777c41bd-527e-47a5-b899-80c304afacca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{5c5adc94-56a3-4df3-a31e-26052978d1bb}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
 </Project>

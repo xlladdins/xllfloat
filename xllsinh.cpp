@@ -11,10 +11,10 @@
 using namespace xll;
 
 static AddInX xai_sinh(
-	FunctionX(XLL_DOUBLE, _T("?xll_sinh"), _T("XLL.SINH"))
-	.Arg(XLL_DOUBLE, _T("value"), _T("is the input value."), _T("0"))
+	FunctionX(XLL_DOUBLEX, X_("?xll_sinh"), X_("XLL.SINH"))
+	.Arg(XLL_DOUBLEX, X_("value"), X_("is the input value."), X_("0"))
 	.Category(CATEGORY)
-	.FunctionHelp(_T("Computes the hyperbolic sine of the input value"))
+	.FunctionHelp(X_("Computes the hyperbolic sine of the input value"))
 	.Documentation(LR"(
 Computes the the hyperbolic sine of one value, and stores an integer value with the sign 
 and approximate magnitude of the result in a location that's specified in a parameter.

@@ -11,10 +11,10 @@
 using namespace xll;
 
 static AddInX xai_expm1(
-	FunctionX(XLL_DOUBLE, _T("?xll_expm1"), _T("XLL.EXPM1"))
-	.Arg(XLL_DOUBLE, _T("x"), _T("is the floating."))
+	FunctionX(XLL_DOUBLEX, X_("?xll_expm1"), X_("XLL.EXPM1"))
+	.Arg(XLL_DOUBLEX, X_("x"), X_("is the floating."))
 	.Category(CATEGORY)
-	.FunctionHelp(_T("Computes e raised to the given power, minus one."))
+	.FunctionHelp(X_("Computes e raised to the given power, minus one."))
 	.Documentation(LR"("Computes e raised to the given power, minus one."
 	)")
 );
